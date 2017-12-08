@@ -18,8 +18,12 @@ export class TarefaPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  parameter1:string;
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TarefaPage');
+    console.log('ionViewDidLoad TarefaPage');    
+    this.parameter1 = this.navParams.get('param1');
+    console.log(this.parameter1);
   }
 
 }
