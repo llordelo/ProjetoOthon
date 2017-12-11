@@ -12,7 +12,46 @@
 
 </ion-header>
 
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Tarefas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-<ion-content padding>
+<ion-content >
 
+  <ion-list>
+
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      {{ item }} 
+    </button>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nome da tarefa</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Descrição da Tarefa</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Data de fim</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Hora de fim</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+    <button ion-button (click)="nextPage($event);">
+      Adicionar tarefa
+    </button> 
+  
 </ion-content>
