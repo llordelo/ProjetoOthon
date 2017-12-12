@@ -18,29 +18,25 @@ import { Lista } from '../../Lista';
   templateUrl: 'tarefa.html',
 })
 export class TarefaPage {
-
+  tarefas = Tare[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  parameter1:string;
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TarefaPage');    
-    this.parameter1 = this.navParams.get('param1');
-    console.log(this.parameter1);
+    var parameter1:string;    
+    HomePage.items.forEach(element => {
+      if(element.name = parameter1){
+        this.tarefas = element.tarefas;
+      }
+    });
+    console.log(parameter1);
   }
 
   nextPage() {
     //this.navCtrl.push(DetalheTarefaPage);
     this.items.push("DEF");
   }
-
-
-   items = [
-     'Tarefa 1',
-     'Tarefa 2',
-     'Tarefa 3'
-   ];
 
    itemSelected(item: string) {
      console.log("Selected Item", item);

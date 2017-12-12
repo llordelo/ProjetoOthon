@@ -14,7 +14,7 @@ import { Lista } from '../../Lista';
   }*/
 })
 export class HomePage {
-  items= new Array();
+  static items = new Array(Lista);
   constructor(public navCtrl: NavController) { 
 
   }
@@ -25,8 +25,8 @@ export class HomePage {
     
     var aux = new Lista($scope.listName, auxTar);
     console.log(aux.nome);
-    this.items.push(aux);
-    console.log(this.items);
+    HomePage.items.push(aux);
+    console.log(HomePage.items);
     
   }
 
