@@ -6,24 +6,15 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{parameter1}}</ion-title>
+  <ion-navbar >
+  <ion-title>{{parameter1}}</ion-title>
   </ion-navbar>
 
-</ion-header>
-
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Tarefas
-    </ion-title>
-  </ion-navbar>
 </ion-header>
 
 <ion-content >
 
   <ion-list>
-
     <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
       {{ item }} 
     </button>

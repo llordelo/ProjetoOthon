@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TarefaPage } from '../tarefa/tarefa';
+import { Tare } from '../../Tare';
+import { Lista } from '../../Lista';
+
 
 @Component({
   selector: 'page-home',
@@ -11,20 +14,23 @@ import { TarefaPage } from '../tarefa/tarefa';
   }*/
 })
 export class HomePage {
+  items= new Array();
+  constructor(public navCtrl: NavController) { 
 
-  constructor(public navCtrl: NavController) { }
-
-  nextPage() {
-    this.navCtrl.push(TarefaPage);
   }
 
-   items = [
-     'Lista 1',
-     'Lista 2',
-     'Lista 3'
-   ];
+  addList($scope) {
+    //this.aux.nome=$scope.listName;
+    var auxTar:Tare[];
+    
+    var aux = new Lista($scope.listName, auxTar);
+    console.log(aux.nome);
+    this.items.push(aux);
+    console.log(this.items);
+    
+  }
 
-   itemSelected(item: string) {
+   itemSelected(item: string) {    
      console.log("Selected Item", item);
      this.navCtrl.push(TarefaPage, {param1:item}); 
   }

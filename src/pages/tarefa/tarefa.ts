@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DetalheTarefaPage } from '../detalhe-tarefa/detalhe-tarefa';
+import { HomePage } from '../home/home';
+import { Tare } from '../../Tare';
+import { Lista } from '../../Lista';
 
 /**
  * Generated class for the TarefaPage page.
@@ -28,8 +31,10 @@ export class TarefaPage {
   }
 
   nextPage() {
-    this.navCtrl.push(DetalheTarefaPage);
+    //this.navCtrl.push(DetalheTarefaPage);
+    this.items.push("DEF");
   }
+
 
    items = [
      'Tarefa 1',
